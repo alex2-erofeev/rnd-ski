@@ -1,0 +1,99 @@
+/* Логотип «РНД.SKI»: горный пик со снежной шапкой над волной Дона.
+   Нарисован только средствами CSS, без картинок. */
+
+.logo {
+    --logo-dark:  #0f3d6e;
+    --logo-green: #2f8f6b;
+    --logo-wave:  #1e6fd9;
+    --logo-sky:   #e3f0fa;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.logo__mark {
+    position: relative;
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    overflow: hidden;
+    background-image: linear-gradient(to bottom, var(--logo-sky), #ffffff);
+    box-shadow: inset 0 0 0 2px var(--logo-dark);
+}
+
+/* Большой пик */
+.logo__peak {
+    position: absolute;
+    left: 14px;
+    bottom: 12px;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 32px solid var(--logo-dark);
+}
+
+/* Снежная шапка на вершине */
+.logo__peak::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -8px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 13px solid #ffffff;
+}
+
+/* Малый зелёный холм слева */
+.logo__hill {
+    position: absolute;
+    left: 2px;
+    bottom: 12px;
+    width: 0;
+    height: 0;
+    border-left: 13px solid transparent;
+    border-right: 13px solid transparent;
+    border-bottom: 18px solid var(--logo-green);
+}
+
+/* Волна Дона: ряд дуг сверху и сплошная полоса воды снизу */
+.logo__wave {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 14px;
+    background-image:
+        radial-gradient(circle at 50% 100%, var(--logo-wave) 3.5px, transparent 4px),
+        linear-gradient(var(--logo-wave), var(--logo-wave));
+    background-size: 8px 4px, 100% 10px;
+    background-position: 0 0, 0 100%;
+    background-repeat: repeat-x, no-repeat;
+}
+
+.logo__text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.logo__name {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--logo-dark);
+}
+
+.logo__name span {
+    color: var(--logo-green);
+}
+
+.logo__slogan {
+    margin-top: 4px;
+    font-size: 12px;
+    color: #5b6b7c;
+}

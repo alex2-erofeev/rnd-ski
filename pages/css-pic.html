@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рисунок CSS — РНД.SKI</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/logo.css">
+    <link rel="stylesheet" href="../css/pic.css">
+</head>
+<body>
+
+    <header>
+        <div class="header__inner">
+            <a class="logo" href="../index.html" aria-label="РНД.SKI — на главную">
+                <span class="logo__mark">
+                    <span class="logo__hill"></span>
+                    <span class="logo__peak"></span>
+                    <span class="logo__wave"></span>
+                </span>
+                <span class="logo__text">
+                    <span class="logo__name">РНД<span>.SKI</span></span>
+                    <span class="logo__slogan">с Дона — на склон</span>
+                </span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Главная</a></li>
+                    <li><a href="resorts.html">Курорты</a></li>
+                    <li><a class="active" href="../index.html#tasks">Задания</a></li>
+                    <li><a href="coursework.html">Курсовая</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content">
+
+        <section class="task-info">
+            <h1>Задание 2. Рисунок CSS</h1>
+            <p>
+                Цель задания — нарисовать картинку размером 200×200 пикселей только
+                средствами CSS, без графических файлов. Все предметы собраны из блоков
+                <code>div</code>: стулья, столик, рамка с картиной, солнце и чайник.
+                Форма деталей задана через <code>border-radius</code> и рамки, объём
+                и цвет — через градиенты <code>linear-gradient</code> и
+                <code>radial-gradient</code>, расположение — через абсолютное
+                позиционирование и <code>z-index</code>.
+            </p>
+        </section>
+
+        <section>
+            <div class="pic">
+
+                <div class="chair chair--left">
+                    <div class="chair-back"></div>
+                    <div class="chair-leg"></div>
+                    <div class="chair-seat"></div>
+                </div>
+
+                <div class="chair chair--right">
+                    <div class="chair-back"></div>
+                    <div class="chair-leg"></div>
+                    <div class="chair-seat"></div>
+                </div>
+
+                <div class="table">
+                    <div class="table-stem"></div>
+                    <div class="table-foot"></div>
+                    <div class="table-top"></div>
+                </div>
+
+                <div class="picture-frame">
+                    <div class="scallop scallop--top"></div>
+                    <div class="scallop scallop--left"></div>
+                    <div class="scallop scallop--right"></div>
+
+                    <div class="canvas">
+                        <div class="sun"></div>
+                        <div class="teapot">
+                            <div class="teapot-handle"></div>
+                            <div class="teapot-spout"></div>
+                            <div class="teapot-body"></div>
+                            <div class="teapot-lid"></div>
+                            <div class="teapot-knob"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer__inner">
+            <p>&copy; 2026 РНД.SKI — учебный сайт по вёрстке</p>
+            <p><a href="../index.html#tasks">Все задания</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

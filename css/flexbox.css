@@ -1,0 +1,208 @@
+:root {
+    --roll-size:        200px;
+    --roll-sky-top:     #ffffff;
+    --roll-sky-bottom:  #5fd3e6;
+    --roll-border:      #222222;
+    --roll-text:        #333333;
+    --roll-final:       #c62828;
+    --roll-star-size:   36px;
+    --roll-brush-size:  36px;
+    --roll-speed:       0.4s;
+}
+
+.flexbox-demo {
+    display: flex;
+    justify-content: center;
+    padding: 24px 0;
+}
+
+.dream-roll {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: var(--roll-size);
+    height: var(--roll-size);
+    padding: 6px 0 4px;
+    border: 2px solid var(--roll-border);
+    overflow: hidden;
+    background-image: linear-gradient(to bottom, var(--roll-sky-top), var(--roll-sky-bottom));
+    cursor: pointer;
+}
+
+.dream-roll__head {
+    position: relative;
+    width: 100%;
+    height: 32px;
+}
+
+.dream-roll__caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-size: 15px;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity var(--roll-speed), transform var(--roll-speed);
+    pointer-events: none;
+}
+
+.dream-roll__caption--start {
+    color: var(--roll-text);
+}
+
+.dream-roll__caption--final {
+    font-family: "Segoe Print", "Comic Sans MS", cursive;
+    font-size: 17px;
+    color: var(--roll-final);
+}
+
+.dream-roll__man {
+    position: relative;
+    width: 100px;
+    height: 150px;
+}
+
+.dream-roll__frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.dream-roll__frame--1 {
+    opacity: 1;
+}
+
+.dream-roll__star {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    width: var(--roll-star-size);
+    height: var(--roll-star-size);
+}
+
+.dream-roll__star-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    offset-path: path("M 18 18 C -44 12, -124 32, -104 82 S 6 162, -4 102 S -94 22, 18 18");
+    offset-distance: 0%;
+    offset-rotate: 0deg;
+    opacity: 0;
+    transform: scale(0.3);
+    transition: opacity var(--roll-speed), transform var(--roll-speed);
+}
+
+.dream-roll__brush {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--roll-brush-size);
+    height: var(--roll-brush-size);
+    offset-path: path("M 26 130 C 20 70, 60 30, 100 40 S 170 60, 170 30");
+    offset-distance: 0%;
+    offset-rotate: 0deg;
+    opacity: 0;
+    transform: scale(0.3);
+    transition: opacity var(--roll-speed), transform var(--roll-speed);
+    pointer-events: none;
+}
+
+.dream-roll:hover .dream-roll__frame--1 {
+    animation: walk-frame-1 0.8s linear infinite;
+}
+
+.dream-roll:hover .dream-roll__frame--2 {
+    animation: walk-frame-2 0.8s linear infinite;
+}
+
+.dream-roll:hover .dream-roll__frame--3 {
+    animation: walk-frame-3 0.8s linear infinite;
+}
+
+.dream-roll:hover .dream-roll__caption--start {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dream-roll:hover .dream-roll__star-img {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.dream-roll__star:hover .dream-roll__star-img {
+    animation: star-fly 4s linear infinite;
+}
+
+.dream-roll:active {
+    animation: roll-pulse 0.6s ease-in-out infinite;
+}
+
+.dream-roll:active .dream-roll__caption--start,
+.dream-roll:active .dream-roll__star-img {
+    opacity: 0;
+}
+
+.dream-roll:active .dream-roll__caption--final {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dream-roll:active .dream-roll__brush {
+    opacity: 1;
+    transform: scale(1);
+    animation: brush-move 1.6s ease-in-out infinite alternate;
+}
+
+@keyframes walk-frame-1 {
+    0%, 24.9%  { opacity: 1; }
+    25%, 100%  { opacity: 0; }
+}
+
+@keyframes walk-frame-2 {
+    0%, 24.9%  { opacity: 0; }
+    25%, 49.9% { opacity: 1; }
+    50%, 74.9% { opacity: 0; }
+    75%, 100%  { opacity: 1; }
+}
+
+@keyframes walk-frame-3 {
+    0%, 49.9%  { opacity: 0; }
+    50%, 74.9% { opacity: 1; }
+    75%, 100%  { opacity: 0; }
+}
+
+@keyframes star-fly {
+    from {
+        offset-distance: 0%;
+        transform: rotate(0deg);
+    }
+    to {
+        offset-distance: 100%;
+        transform: rotate(720deg);
+    }
+}
+
+@keyframes brush-move {
+    from { offset-distance: 0%; }
+    to   { offset-distance: 100%; }
+}
+
+@keyframes roll-pulse {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.05); }
+}

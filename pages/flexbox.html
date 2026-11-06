@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox-ролик — РНД.SKI</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/logo.css">
+    <link rel="stylesheet" href="../css/flexbox.css">
+</head>
+<body>
+
+    <header>
+        <div class="header__inner">
+            <a class="logo" href="../index.html" aria-label="РНД.SKI — на главную">
+                <span class="logo__mark">
+                    <span class="logo__hill"></span>
+                    <span class="logo__peak"></span>
+                    <span class="logo__wave"></span>
+                </span>
+                <span class="logo__text">
+                    <span class="logo__name">РНД<span>.SKI</span></span>
+                    <span class="logo__slogan">с Дона — на склон</span>
+                </span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Главная</a></li>
+                    <li><a href="resorts.html">Курорты</a></li>
+                    <li><a class="active" href="../index.html#tasks">Задания</a></li>
+                    <li><a href="coursework.html">Курсовая</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content">
+
+        <section class="task-info">
+            <h1>Задание. Flexbox-ролик «Иду за мечтой» (вариант 1)</h1>
+            <p>
+                Ролик собран на Flexbox: блок разбит на шапку с надписью, фигуру художника
+                и декоративные элементы, которые выравниваются свойствами
+                <code>justify-content</code> и <code>align-items</code>. Анимация ходьбы
+                сделана сменой трёх кадров через <code>@keyframes</code>, полёт звезды и кисти —
+                через <code>offset-path</code>.
+            </p>
+            <p>
+                Как смотреть: наведите курсор на ролик — художник пойдёт, появятся звезда
+                и надпись. Наведите курсор на звезду — она закрутится и полетит
+                по странной траектории. Зажмите кнопку мыши на ролике — появятся кисть
+                и фраза «Мечта рядом!», а весь блок начнёт пульсировать.
+            </p>
+        </section>
+
+        <section class="flexbox-demo">
+            <div class="dream-roll">
+
+                <div class="dream-roll__head">
+                    <p class="dream-roll__caption dream-roll__caption--start">Иду за мечтой</p>
+                    <p class="dream-roll__caption dream-roll__caption--final">Мечта рядом!</p>
+                </div>
+
+                <div class="dream-roll__man">
+                    <img class="dream-roll__frame dream-roll__frame--1" src="../img/flexbox/man1.png" alt="Художник с палитрой" draggable="false">
+                    <img class="dream-roll__frame dream-roll__frame--2" src="../img/flexbox/man2.png" alt="" draggable="false">
+                    <img class="dream-roll__frame dream-roll__frame--3" src="../img/flexbox/man3.png" alt="" draggable="false">
+                </div>
+
+                <div class="dream-roll__star">
+                    <img class="dream-roll__star-img" src="../img/flexbox/zvezda.png" alt="Звезда" draggable="false">
+                </div>
+
+                <img class="dream-roll__brush" src="../img/flexbox/brush.png" alt="Кисть" draggable="false">
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer__inner">
+            <p>&copy; 2026 РНД.SKI — учебный сайт по вёрстке</p>
+            <p><a href="../index.html#tasks">Все задания</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

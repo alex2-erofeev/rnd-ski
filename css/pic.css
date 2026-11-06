@@ -1,0 +1,248 @@
+.pic {
+    --wall:      #b5c498;
+    --frame:     #ffffff;
+    --wood:      #c98d4d;
+    --stud:      #6a3b12;
+    --sky-mid:   #6a86e0;
+    --sky-deep:  #2c3fb8;
+    --sun:       #f2e96a;
+    --pot-light: #ffd4de;
+    --pot-mid:   #ef8fa6;
+    --pot-deep:  #cf3355;
+    --pot-dark:  #a3123c;
+
+    position: relative;
+    box-sizing: border-box;
+    width: 200px;
+    height: 200px;
+    border: 8px solid var(--frame);
+    background-color: var(--wall);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
+}
+
+.chair {
+    position: absolute;
+    top: 86px;
+    width: 47px;
+    height: 96px;
+}
+
+.chair--left {
+    left: 4px;
+}
+
+.chair--right {
+    right: 4px;
+    transform: scaleX(-1);
+}
+
+.chair-back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 14px;
+    height: 96px;
+    border-right: 5px solid var(--wood);
+    border-radius: 0 17px 17px 0 / 0 48px 48px 0;
+}
+
+.chair-seat {
+    position: absolute;
+    left: 14px;
+    top: 48px;
+    width: 33px;
+    height: 8px;
+    border-radius: 3px;
+    background-color: var(--wood);
+    background-image:
+        radial-gradient(circle 2.5px at  5px 4px, var(--stud) 99%, transparent 100%),
+        radial-gradient(circle 2.5px at 16px 4px, var(--stud) 99%, transparent 100%),
+        radial-gradient(circle 2.5px at 27px 4px, var(--stud) 99%, transparent 100%);
+    background-repeat: no-repeat;
+}
+
+.chair-leg {
+    position: absolute;
+    left: 37px;
+    top: 48px;
+    width: 7px;
+    height: 48px;
+    border-radius: 2px;
+    background-color: var(--wood);
+}
+
+.table {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.table-stem {
+    position: absolute;
+    left: 83px;
+    top: 113px;
+    width: 18px;
+    height: 37px;
+    z-index: 3;
+    border-radius: 4px / 12px;
+    background-color: var(--wood);
+}
+
+.table-foot {
+    position: absolute;
+    left: 70px;
+    top: 148px;
+    width: 12px;
+    height: 0;
+    border-bottom: 34px solid var(--wood);
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+}
+
+.table-top {
+    position: absolute;
+    left: 46px;
+    top: 104px;
+    width: 92px;
+    height: 10px;
+    z-index: 3;
+    background-color: var(--wood);
+}
+
+.picture-frame {
+    position: absolute;
+    left: 42px;
+    top: 18px;
+    width: 100px;
+    height: 100px;
+    z-index: 2;
+    background-color: var(--frame);
+}
+
+.scallop {
+    position: absolute;
+    background-image: radial-gradient(circle 10px at 10px 10px,
+        transparent 62%,
+        var(--frame) 64%,
+        var(--frame) 99%,
+        transparent 100%);
+    background-size: 20px 20px;
+}
+
+.scallop--top {
+    left: 0;
+    top: -10px;
+    width: 100px;
+    height: 20px;
+    background-repeat: repeat-x;
+}
+
+.scallop--left,
+.scallop--right {
+    top: 0;
+    width: 20px;
+    height: 100px;
+    background-repeat: repeat-y;
+}
+
+.scallop--left  { left: -10px; }
+.scallop--right { right: -10px; }
+
+.canvas {
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    width: 92px;
+    height: 83px;
+    overflow: hidden;
+    background-image: radial-gradient(circle at 64% 42%,
+        #ffffff 8%,
+        #d7e4fa 26%,
+        var(--sky-mid) 65%,
+        var(--sky-deep) 100%);
+}
+
+.sun {
+    position: absolute;
+    right: -20px;
+    top: -17px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--sun);
+}
+
+.teapot {
+    position: absolute;
+    left: 6px;
+    bottom: -2px;
+    width: 80px;
+    height: 56px;
+}
+
+.teapot-body {
+    position: absolute;
+    left: 11px;
+    top: 22px;
+    width: 54px;
+    height: 34px;
+    z-index: 4;
+    border-radius: 50%;
+    background-image: radial-gradient(circle at 32% 26%,
+        var(--pot-light) 0%,
+        var(--pot-mid) 32%,
+        var(--pot-deep) 72%,
+        var(--pot-dark) 100%);
+}
+
+.teapot-lid {
+    position: absolute;
+    left: 19px;
+    top: 11px;
+    width: 38px;
+    height: 16px;
+    z-index: 3;
+    border-radius: 50% 50% 18% 18% / 100% 100% 22% 22%;
+    background-image: radial-gradient(circle at 32% 28%,
+        var(--pot-light) 0%,
+        var(--pot-mid) 35%,
+        var(--pot-deep) 100%);
+}
+
+.teapot-knob {
+    position: absolute;
+    left: 34px;
+    top: 5px;
+    width: 9px;
+    height: 8px;
+    z-index: 2;
+    border-radius: 50% 50% 35% 35%;
+    background-image: radial-gradient(circle at 35% 30%,
+        var(--pot-light) 0%,
+        var(--pot-deep) 100%);
+}
+
+.teapot-spout {
+    position: absolute;
+    left: -6px;
+    top: 31px;
+    width: 20px;
+    height: 8px;
+    z-index: 1;
+    background-color: var(--pot-deep);
+    transform: rotate(45deg);
+    transform-origin: right center;
+}
+
+.teapot-handle {
+    position: absolute;
+    left: 55px;
+    top: 23px;
+    width: 12px;
+    height: 18px;
+    z-index: 1;
+    border: 3px solid var(--pot-deep);
+    border-radius: 50%;
+}
