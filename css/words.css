@@ -80,6 +80,16 @@
     font-weight: bold;
 }
 
+.words__hint {
+    display: none;
+    margin-top: 12px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: var(--site-text);
+    background-color: #e8e6e6;
+}
+
 .words__item {
     display: inline-block;
     padding: 14px 24px;

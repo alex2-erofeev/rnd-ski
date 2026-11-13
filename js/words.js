@@ -3,8 +3,12 @@ var button = document.getElementById('words-button');
 var block2 = document.getElementById('block2');
 var block3 = document.getElementById('block3');
 var output = document.getElementById('words-output');
+var hint = document.getElementById('words-hint');
 
 var startColor = randomColor();
+var words = {};
+var clicks = {};
+var clickOrder = [];
 var dragged = null;
 var shiftX = 0;
 var shiftY = 0;
@@ -70,6 +74,41 @@ function addWord(item) {
     output.appendChild(span);
 }
 
+function timesWord(n) {
+    var last = n % 10;
+    var lastTwo = n % 100;
+    if (last >= 2 && last <= 4 && (lastTwo < 12 || lastTwo > 14)) {
+        return 'раза';
+    }
+    return 'раз';
+}
+
+function showHint() {
+    var parts = [];
+    for (var i = 0; i < clickOrder.length; i++) {
+        var key = clickOrder[i];
+        var count = clicks[key];
+        parts.push(count + ' ' + timesWord(count) + ' на элемент "' + key + ' ' + words[key] + '"');
+    }
+
+    var text = parts[parts.length - 1];
+    if (parts.length > 1) {
+        text = parts.slice(0, parts.length - 1).join(', ') + ' и ' + text;
+    }
+
+    hint.textContent = 'Нажали ' + text;
+    hint.style.display = 'block';
+}
+
+function countClick(key) {
+    if (clicks[key] == undefined) {
+        clicks[key] = 0;
+        clickOrder.push(key);
+    }
+    clicks[key]++;
+    showHint();
+}
+
 function createItem(key, word, index) {
     var item = document.createElement('div');
     item.className = 'words__item';
@@ -94,6 +133,7 @@ function createItem(key, word, index) {
     item.addEventListener('click', function () {
         if (item.parentNode == block2) {
             addWord(item);
+            countClick(key);
         }
     });
 
@@ -101,11 +141,15 @@ function createItem(key, word, index) {
 }
 
 function showWords() {
-    var words = parse(input.value);
+    words = parse(input.value);
+    clicks = {};
+    clickOrder = [];
 
     block2.innerHTML = '';
     block3.innerHTML = '';
     output.innerHTML = '';
+    hint.textContent = '';
+    hint.style.display = '';
 
     var index = 0;
     for (var key in words) {
