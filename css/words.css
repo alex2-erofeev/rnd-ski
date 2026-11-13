@@ -1,0 +1,105 @@
+:root {
+    --words-block:  #ffffff;
+    --words-blue:   #1e6fd9;
+    --words-red:    #c62828;
+    --words-gray:   #b5b5b5;
+}
+
+.words__block3 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    box-sizing: border-box;
+    min-height: 100px;
+    padding: 16px;
+    border: 2px dashed var(--words-gray);
+    border-radius: 8px;
+    background-color: var(--words-block);
+}
+
+.words__bottom {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.words__block2 {
+    position: relative;
+    flex: 1;
+    height: 320px;
+    border: 2px solid var(--words-blue);
+    border-radius: 8px;
+    background-color: var(--words-block);
+}
+
+.words__block1 {
+    box-sizing: border-box;
+    width: 40%;
+    padding: 16px;
+    border: 2px solid var(--words-gray);
+    border-radius: 8px;
+    background-color: var(--words-block);
+}
+
+.words__input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid var(--words-gray);
+    border-radius: 6px;
+    font-family: var(--site-font);
+    font-size: 16px;
+}
+
+.words__button {
+    margin-top: 12px;
+    padding: 10px 28px;
+    border: none;
+    border-radius: 6px;
+    font-family: var(--site-font);
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--site-white);
+    background-color: var(--site-accent);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.words__button:hover {
+    background-color: var(--site-nav);
+}
+
+.words__output {
+    box-sizing: border-box;
+    min-height: 120px;
+    margin-top: 12px;
+    padding: 10px;
+    border: 2px solid var(--words-red);
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.words__item {
+    display: inline-block;
+    padding: 14px 24px;
+    border-radius: 50%;
+    color: var(--site-white);
+    white-space: nowrap;
+    cursor: grab;
+    user-select: none;
+}
+
+.words__item--placed {
+    position: absolute;
+}
+
+@media (max-width: 700px) {
+    .words__bottom {
+        flex-direction: column;
+    }
+
+    .words__block1 {
+        width: 100%;
+    }
+}

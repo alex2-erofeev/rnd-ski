@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Слова — РНД.SKI</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/logo.css">
+    <link rel="stylesheet" href="../css/words.css">
+</head>
+<body>
+
+    <header>
+        <div class="header__inner">
+            <a class="logo" href="../index.html" aria-label="РНД.SKI — на главную">
+                <span class="logo__mark">
+                    <span class="logo__hill"></span>
+                    <span class="logo__peak"></span>
+                    <span class="logo__wave"></span>
+                </span>
+                <span class="logo__text">
+                    <span class="logo__name">РНД<span>.SKI</span></span>
+                    <span class="logo__slogan">с Дона — на склон</span>
+                </span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Главная</a></li>
+                    <li><a href="resorts.html">Курорты</a></li>
+                    <li><a class="active" href="../index.html#tasks">Задания</a></li>
+                    <li><a href="coursework.html">Курсовая</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content">
+
+        <section class="task-info">
+            <h1>Задание Слова (вариант 1)</h1>
+            <p>
+                Строка из текстового поля разбивается по тире на слова и числа.
+                Они раскладываются на три группы: слова со строчной буквы, слова
+                с заглавной буквы и числа. Каждая группа сортируется, и из неё
+                собирается ассоциативный массив с ключами a1…, b1…, n1….
+                Элементы можно перетаскивать между блоками. Клик по элементу
+                в блоке 2 дописывает его слово в поле вывода.
+            </p>
+        </section>
+
+        <section class="words">
+            <div class="words__block3" id="block3"></div>
+
+            <div class="words__bottom">
+                <div class="words__block2" id="block2"></div>
+
+                <div class="words__block1">
+                    <input class="words__input" id="words-input" type="text" value="лес - бочка - 20 – бык - крик - 3 -Бок">
+                    <button class="words__button" id="words-button" type="button">Разобрать</button>
+                    <div class="words__output" id="words-output"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer__inner">
+            <p>&copy; 2026 РНД.SKI — учебный сайт по вёрстке</p>
+            <p><a href="../index.html#tasks">Все задания</a></p>
+        </div>
+    </footer>
+
+    <script src="../js/words.js"></script>
+</body>
+</html>
